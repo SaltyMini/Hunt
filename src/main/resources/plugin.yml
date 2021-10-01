@@ -1,0 +1,6 @@
+name: Hunt
+version: '${project.version}'
+main: hunt.hunt.Hunt
+api-version: 1.17
+authors: [ Salty ]
+description: Murder mystery plugin, not a rip off of any existing games, for sure
