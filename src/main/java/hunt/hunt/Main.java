@@ -7,6 +7,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin implements org.bukkit.event.Listener {
 
+    public enum gameState {
+        preGame,
+        midGame,
+        postGame;
+    }
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -14,6 +20,8 @@ public final class Main extends JavaPlugin implements org.bukkit.event.Listener 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents((org.bukkit.event.Listener) this, this);
         pm.registerEvents((org.bukkit.event.Listener) new BlockInteractListener(), this);
+
+        gameState state = gameState.preGame;
 
     }
 
