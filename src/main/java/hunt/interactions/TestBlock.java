@@ -1,51 +1,13 @@
 package hunt.interactions;
 
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
-import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
+public abstract class TestBlock {
+    private isCompleted = false;
 
-import java.util.Objects;
-
-public class TestBlock implements Listener {
-
-    public void Interact(PlayerInteractEvent event) {
-
-        Material block = Objects.requireNonNull(event.getClickedBlock()).getType();
-
-       if(!(event.getAction().equals(Action.RIGHT_CLICK_BLOCK))) {
-           return;
-       }
-
-       Player player = event.getPlayer();
-
-        switch (block) {
-            case RED_WOOL:
-                        redWool(player);
-                        break;
-            case BLUE_WOOL:
-                        blueWool(player);
-                        break;
-            default:
-                break;
-
-        }
+    public boolean getCompleted(){
+        return isCompleted;
     }
 
-    public static void redWool(Player player) {
-
-        player.sendMessage("You clicked red wool");
-
+    public void setCompleted(boolean completed){
+        return isCompleted  = completed;
     }
-
-    public static void blueWool(Player player) {
-
-       player.sendMessage("You clicked blue wool");
-
-
-    }
-
 }
